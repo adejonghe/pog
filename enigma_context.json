@@ -53,7 +53,7 @@
     "shiptype": "enigma:shiptype",
     "speed": {
       "@id": "enigma:speed",
-      "@type": "xsd:float"
+      "@type": "xsd:float"
     },
     "elapsed": {
       "@id": "enigma:elapsed",
