@@ -14,11 +14,11 @@
     },
     "flag": "enigma:flag",
     "heading": {
-      "@id": "enigma:elapsed",
+      "@id": "enigma:heading",
       "@type": "xsd:int"
     },
     "length": {
-      "@id": "enigma:elapsed",
+      "@id": "enigma:length",
       "@type": "xsd:int"
     },
     "destination": "http://schema.org/description",
