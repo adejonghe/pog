@@ -21,7 +21,7 @@
       "@id": "enigma:length",
       "@type": "xsd:int"
     },
-    "destination": "http://schema.org/description",
+    "destination": "enigma:destination",
     "lon": {
       "@id": "http://schema.org/longitude",
       "@type": "xsd:float"
