@@ -65,7 +65,7 @@
       "@type": "xsd:float"
     },
     "timemillis": {
-      "@id": "caprads:timestamp",
+      "@id": "caprads:timemillis",
       "@type": "xsd:long"
     },
     "key": "caprads:key",
