@@ -73,6 +73,7 @@
       "@id": "enigma:ts",
       "@type": "xsd:dateTime"
     },
-    "geometry": "geo:hasGeometry"
+    "geometry": "geo:hasGeometry",
+    "asWKT": "geo:asWKT"
   }
 }
