@@ -2,75 +2,75 @@
   "@context": {
     "sf": "http://www.opengis.net/sf#",
     "geo": "http://www.opengis.net/ont/geosparql#",
-    "enigma": "http://www.pog.be/enigma/vocab#" ,
+    "caprads": "http://idlab.ugent.be/caprads/vocab#" ,
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "dwt": {
-      "@id": "enigma:deadweight",
+      "@id": "caprads:deadweight",
       "@type": "xsd:int"
     },
     "gt_shiptype": {
-      "@id": "enigma:gt_shiptype",
+      "@id": "caprads:gt_shiptype",
       "@type": "xsd:int"
     },
-    "flag": "enigma:flag",
+    "flag": "caprads:flag",
     "heading": {
-      "@id": "enigma:heading",
+      "@id": "caprads:heading",
       "@type": "xsd:int"
     },
     "length": {
-      "@id": "enigma:length",
+      "@id": "caprads:length",
       "@type": "xsd:int"
     },
-    "destination": "enigma:destination",
+    "destination": "caprads:destination",
     "lon": {
       "@id": "http://schema.org/longitude",
       "@type": "xsd:float"
     },
-    "shiptype": "enigma:shiptype",
+    "shiptype": "caprads:shiptype",
     "speed": {
-      "@id": "enigma:speed",
+      "@id": "caprads:speed",
       "@type": "xsd:float"
     },
     "elapsed": {
-      "@id": "enigma:elapsed",
+      "@id": "caprads:elapsed",
       "@type": "xsd:int"
     },
     "w_left": {
-        "@id": "enigma:wLeft",
+        "@id": "caprads:wLeft",
         "@type": "xsd:int"
     },
     "rot": {
-       "@id": "enigma:rateOfTurn",
+       "@id": "caprads:rateOfTurn",
        "@type": "xsd:int"
     },
     "width": {
-       "@id": "enigma:width",
+       "@id": "caprads:width",
        "@type": "xsd:int"
     },
     "l_fore": {
-        "@id": "enigma:lFore",
+        "@id": "caprads:lFore",
         "@type": "xsd:int"
     },
     "course": {
-        "@id": "enigma:course",
+        "@id": "caprads:course",
         "@type": "xsd:int"
     },
     "ship_id": {
-        "@id": "enigma:shipId",
+        "@id": "caprads:shipId",
         "@type": "xsd:int"
     },
-    "shipname": "enigma:shipName",
+    "shipname": "caprads:shipName",
     "lat": {
       "@id": "http://schema.org/latitude",
       "@type": "xsd:float"
     },
-    "timestamp": {
-      "@id": "enigma:timestamp",
+    "timemillis": {
+      "@id": "caprads:timestamp",
       "@type": "xsd:long"
     },
-    "key": "enigma:key",
-    "ts": {
-      "@id": "enigma:ts",
+    "key": "caprads:key",
+    "timestamp": {
+      "@id": "caprads:timestamp",
       "@type": "xsd:dateTime"
     },
     "geometry": "geo:hasGeometry",
