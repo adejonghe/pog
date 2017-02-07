@@ -68,7 +68,6 @@
       "@id": "caprads:timemillis",
       "@type": "xsd:long"
     },
-    "key": "caprads:key",
     "timestamp": {
       "@id": "caprads:timestamp",
       "@type": "xsd:dateTime"
