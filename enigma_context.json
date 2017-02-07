@@ -73,6 +73,6 @@
       "@id": "enigma:ts",
       "@type": "xsd:dateTime"
     },
-    "geometry": "enigma:geometry"
+    "geometry": "geo:hasGeometry"
   }
 }
