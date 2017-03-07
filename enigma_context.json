@@ -4,6 +4,13 @@
     "geo": "http://www.opengis.net/ont/geosparql#",
     "caprads": "http://idlab.ugent.be/caprads/vocab#" ,
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "geojson": "https://purl.org/geojson/vocab#",
+    "Feature": "geo:Feature",
+    "Point": "sf:Point",
+    "properties": "caprads:properties",
+    "geometry": "geo:hasGeometry",
+    "asWKT": "geo:asWKT",
+    "type":"@type",
     "dwt": {
       "@id": "caprads:deadweight",
       "@type": "xsd:int"
@@ -71,8 +78,6 @@
     "timestamp": {
       "@id": "caprads:timestamp",
       "@type": "xsd:dateTime"
-    },
-    "geometry": "geo:hasGeometry",
-    "asWKT": "geo:asWKT"
+    }
   }
 }
