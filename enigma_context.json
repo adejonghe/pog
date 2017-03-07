@@ -1,19 +1,13 @@
 {
   "@context": {
-    "sf": "http://www.opengis.net/sf#",
+    "sf": "http://www.opengis.net/ont/sf#",
     "geo": "http://www.opengis.net/ont/geosparql#",
     "caprads": "http://idlab.ugent.be/caprads/vocab#" ,
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "Feature": "geo:Feature",
     "Point": "sf:Point",
-    "properties": {
-      "@id": "caprads:properties",
-      "@type": "@id"
-    },
-    "geometry": {
-      "@id": "geo:hasGeometry",
-      "@type": "@id"
-    },
+    "properties": "caprads:properties",
+    "geometry": "geo:hasGeometry",
     "asWKT": "geo:asWKT",
     "type":"@type",
     "dwt": {
