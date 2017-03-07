@@ -6,8 +6,14 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "Feature": "geo:Feature",
     "Point": "sf:Point",
-    "properties": "caprads:properties",
-    "geometry": "geo:hasGeometry",
+    "properties": {
+      "@id": "caprads:properties",
+      "@type": "@id"
+    },
+    "geometry": {
+      "@id": "geo:hasGeometry",
+      "@type": "@id"
+    },
     "asWKT": "geo:asWKT",
     "type":"@type",
     "dwt": {
