@@ -63,7 +63,7 @@
     },
     "ship_id": {
         "@id": "caprads:shipId",
-        "@type": "xsd:int"
+        "@type": "xsd:string"
     },
     "shipname": "caprads:shipName",
     "lat": {
