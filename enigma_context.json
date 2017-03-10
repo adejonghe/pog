@@ -5,6 +5,7 @@
     "caprads": "http://idlab.ugent.be/caprads/vocab#" ,
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "Feature": "geo:Feature",
+    "Ship":"caprads:Ship",
     "Point": "sf:Point",
     "properties": "caprads:properties",
     "geometry": "geo:hasGeometry",
