@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>Windmolens2</name>
+<Schema name="Windmolens2" id="Windmolens2">
+	<SimpleField name="Name" type="string"/>
+	<SimpleField name="Description" type="string"/>
+	<SimpleField name="X" type="float"/>
+	<SimpleField name="Y" type="float"/>
+	<SimpleField name="GSCODE" type="string"/>
+	<SimpleField name="BEDR_NR" type="string"/>
+	<SimpleField name="TYPE" type="string"/>
+	<SimpleField name="POSTLOC" type="float"/>
+	<SimpleField name="LOCATIE" type="string"/>
+	<SimpleField name="PROJECT" type="string"/>
+	<SimpleField name="AANTTURB" type="float"/>
+	<SimpleField name="P_TOT_KW" type="float"/>
+	<SimpleField name="P_TURBKW" type="float"/>
+	<SimpleField name="INGEBRK" type="float"/>
+	<SimpleField name="ASHOOGTE" type="float"/>
+	<SimpleField name="TOTHOOG" type="float"/>
+	<SimpleField name="TYPE_1" type="string"/>
+	<SimpleField name="AANT_FAM" type="float"/>
+	<SimpleField name="STATUS" type="string"/>
+	<SimpleField name="CODEVREG" type="string"/>
+	<SimpleField name="EXTRA1" type="string"/>
+	<SimpleField name="EXTRA2" type="string"/>
+	<SimpleField name="EXTRA3" type="string"/>
+	<SimpleField name="EXTRA4" type="string"/>
+	<SimpleField name="EXTRA5" type="string"/>
+	<SimpleField name="EXTRA6" type="string"/>
+	<SimpleField name="EXTRA7" type="string"/>
+	<SimpleField name="EXTRA8" type="string"/>
+	<SimpleField name="EXTRA9" type="string"/>
+	<SimpleField name="EXTRA10" type="string"/>
+	<SimpleField name="PROD" type="string"/>
+	<SimpleField name="INSTAL" type="string"/>
+	<SimpleField name="TECHN" type="string"/>
+	<SimpleField name="P_KWE" type="float"/>
+	<SimpleField name="DATUM_IN" type="string"/>
+	<SimpleField name="PROD_MWH" type="float"/>
+	<SimpleField name="id" type="int"/>
+</Schema>
+  <Placemark id="1">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">106876.00000</SimpleData>
+		<SimpleData name="Y">198711.00000</SimpleData>
+		<SimpleData name="GSCODE">WND-0092 Volvo Cars Gent</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Oostakker</SimpleData>
+		<SimpleData name="PROJECT">Volvo II</SimpleData>
+		<SimpleData name="AANTTURB">3.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">6000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2010.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">100.000000</SimpleData>
+		<SimpleData name="TOTHOOG">145.000000</SimpleData>
+		<SimpleData name="AANT_FAM">1330.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0092 Volvo Cars Gent</SimpleData>
+		<SimpleData name="PROD">Electrabel NV</SimpleData>
+		<SimpleData name="INSTAL">WND-0092 Volvo Cars Gent</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">6150.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2010/09/06</SimpleData>
+		<SimpleData name="PROD_MWH">10174.565836</SimpleData>
+		<SimpleData name="id">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.753141369473966,51.096899005526701</coordinates></Point>
+  </Placemark>
+  <Placemark id="2">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">106660.00000</SimpleData>
+		<SimpleData name="Y">199146.00000</SimpleData>
+		<SimpleData name="GSCODE">WND-0092 Volvo Cars Gent</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Oostakker</SimpleData>
+		<SimpleData name="PROJECT">Volvo II</SimpleData>
+		<SimpleData name="AANTTURB">3.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">6000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2010.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">100.000000</SimpleData>
+		<SimpleData name="TOTHOOG">145.000000</SimpleData>
+		<SimpleData name="AANT_FAM">1330.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0092 Volvo Cars Gent</SimpleData>
+		<SimpleData name="PROD">Electrabel NV</SimpleData>
+		<SimpleData name="INSTAL">WND-0092 Volvo Cars Gent</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">6150.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2010/09/06</SimpleData>
+		<SimpleData name="PROD_MWH">10174.565836</SimpleData>
+		<SimpleData name="id">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.750005977981471,51.100794380240927</coordinates></Point>
+  </Placemark>
+  <Placemark id="3">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">106910.00000</SimpleData>
+		<SimpleData name="Y">199647.00000</SimpleData>
+		<SimpleData name="GSCODE">WND-0092 Volvo Cars Gent</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Oostakker</SimpleData>
+		<SimpleData name="PROJECT">Volvo II</SimpleData>
+		<SimpleData name="AANTTURB">3.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">6000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2010.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">100.000000</SimpleData>
+		<SimpleData name="TOTHOOG">145.000000</SimpleData>
+		<SimpleData name="AANT_FAM">1330.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0092 Volvo Cars Gent</SimpleData>
+		<SimpleData name="PROD">Electrabel NV</SimpleData>
+		<SimpleData name="INSTAL">WND-0092 Volvo Cars Gent</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">6150.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2010/09/06</SimpleData>
+		<SimpleData name="PROD_MWH">10174.565836</SimpleData>
+		<SimpleData name="id">3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.753524747352244,51.105317212227312</coordinates></Point>
+  </Placemark>
+  <Placemark id="4">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">109337.52880</SimpleData>
+		<SimpleData name="Y">203007.75630</SimpleData>
+		<SimpleData name="GSCODE">WND-0020 Rodenhuize</SimpleData>
+		<SimpleData name="BEDR_NR">4200W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9042.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent - Rodenhuize</SimpleData>
+		<SimpleData name="PROJECT">Rodenhuize Wind</SimpleData>
+		<SimpleData name="AANTTURB">2.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">4000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2003.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">78.000000</SimpleData>
+		<SimpleData name="TOTHOOG">118.000000</SimpleData>
+		<SimpleData name="TYPE_1">Vestas V80</SimpleData>
+		<SimpleData name="AANT_FAM">0.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0020 Rodenhuize</SimpleData>
+		<SimpleData name="PROD">Electrabel NV</SimpleData>
+		<SimpleData name="INSTAL">WND-0020 Rodenhuize</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">4000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2003/01/01</SimpleData>
+		<SimpleData name="PROD_MWH">6617.603796</SimpleData>
+		<SimpleData name="id">4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.787798823930121,51.135695511576557</coordinates></Point>
+  </Placemark>
+  <Placemark id="5">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">109038.39160</SimpleData>
+		<SimpleData name="Y">202566.96120</SimpleData>
+		<SimpleData name="GSCODE">WND-0020 Rodenhuize</SimpleData>
+		<SimpleData name="BEDR_NR">4190W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9042.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent - Rodenhuize</SimpleData>
+		<SimpleData name="PROJECT">Rodenhuize Wind</SimpleData>
+		<SimpleData name="AANTTURB">2.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">4000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2003.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">78.000000</SimpleData>
+		<SimpleData name="TOTHOOG">118.000000</SimpleData>
+		<SimpleData name="TYPE_1">Vestas V80</SimpleData>
+		<SimpleData name="AANT_FAM">0.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0020 Rodenhuize</SimpleData>
+		<SimpleData name="PROD">Electrabel NV</SimpleData>
+		<SimpleData name="INSTAL">WND-0020 Rodenhuize</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">4000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2003/01/01</SimpleData>
+		<SimpleData name="PROD_MWH">6617.603796</SimpleData>
+		<SimpleData name="id">5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.783574705090784,51.131712376063994</coordinates></Point>
+  </Placemark>
+  <Placemark id="6">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">108672.18290</SimpleData>
+		<SimpleData name="Y">204557.81150</SimpleData>
+		<SimpleData name="GSCODE">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="BEDR_NR">7890W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Kluizendok</SimpleData>
+		<SimpleData name="PROJECT">Kluizendok Wind</SimpleData>
+		<SimpleData name="AANTTURB">11.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">22000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2005.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">98.000000</SimpleData>
+		<SimpleData name="TOTHOOG">135.000000</SimpleData>
+		<SimpleData name="TYPE_1">Enercon E70</SimpleData>
+		<SimpleData name="AANT_FAM">1140.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="PROD">Ecopower cvba</SimpleData>
+		<SimpleData name="INSTAL">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">22000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2004/04/01</SimpleData>
+		<SimpleData name="PROD_MWH">36396.820878</SimpleData>
+		<SimpleData name="id">6</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.778117260609619,51.149580861995553</coordinates></Point>
+  </Placemark>
+  <Placemark id="7">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">108318.79670</SimpleData>
+		<SimpleData name="Y">204487.64290</SimpleData>
+		<SimpleData name="GSCODE">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="BEDR_NR">7905W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Kluizendok</SimpleData>
+		<SimpleData name="PROJECT">Kluizendok Wind</SimpleData>
+		<SimpleData name="AANTTURB">11.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">22000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2005.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">98.000000</SimpleData>
+		<SimpleData name="TOTHOOG">135.000000</SimpleData>
+		<SimpleData name="TYPE_1">Enercon E70</SimpleData>
+		<SimpleData name="AANT_FAM">1140.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="PROD">Ecopower cvba</SimpleData>
+		<SimpleData name="INSTAL">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">22000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2004/04/01</SimpleData>
+		<SimpleData name="PROD_MWH">36396.820878</SimpleData>
+		<SimpleData name="id">7</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.773075066907494,51.148924817916928</coordinates></Point>
+  </Placemark>
+  <Placemark id="8">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">107963.11070</SimpleData>
+		<SimpleData name="Y">204445.88790</SimpleData>
+		<SimpleData name="GSCODE">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="BEDR_NR">7910W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Kluizendok</SimpleData>
+		<SimpleData name="PROJECT">Kluizendok Wind</SimpleData>
+		<SimpleData name="AANTTURB">11.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">22000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2005.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">98.000000</SimpleData>
+		<SimpleData name="TOTHOOG">135.000000</SimpleData>
+		<SimpleData name="TYPE_1">Enercon E70</SimpleData>
+		<SimpleData name="AANT_FAM">1140.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="PROD">Ecopower cvba</SimpleData>
+		<SimpleData name="INSTAL">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">22000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2004/04/01</SimpleData>
+		<SimpleData name="PROD_MWH">36396.820878</SimpleData>
+		<SimpleData name="id">8</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.76799686854171,51.148523780975012</coordinates></Point>
+  </Placemark>
+  <Placemark id="9">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">107243.36230</SimpleData>
+		<SimpleData name="Y">204196.74420</SimpleData>
+		<SimpleData name="GSCODE">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="BEDR_NR">7935W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Kluizendok</SimpleData>
+		<SimpleData name="PROJECT">Kluizendok Wind</SimpleData>
+		<SimpleData name="AANTTURB">11.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">22000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2005.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">98.000000</SimpleData>
+		<SimpleData name="TOTHOOG">135.000000</SimpleData>
+		<SimpleData name="TYPE_1">Enercon E70</SimpleData>
+		<SimpleData name="AANT_FAM">1140.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="PROD">Ecopower cvba</SimpleData>
+		<SimpleData name="INSTAL">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">22000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2004/04/01</SimpleData>
+		<SimpleData name="PROD_MWH">36396.820878</SimpleData>
+		<SimpleData name="id">9</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.757740486686382,51.146231663752459</coordinates></Point>
+  </Placemark>
+  <Placemark id="10">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">107591.32030</SimpleData>
+		<SimpleData name="Y">204283.46150</SimpleData>
+		<SimpleData name="GSCODE">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="BEDR_NR">7925W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Kluizendok</SimpleData>
+		<SimpleData name="PROJECT">Kluizendok Wind</SimpleData>
+		<SimpleData name="AANTTURB">11.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">22000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2005.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">98.000000</SimpleData>
+		<SimpleData name="TOTHOOG">135.000000</SimpleData>
+		<SimpleData name="TYPE_1">Enercon E70</SimpleData>
+		<SimpleData name="AANT_FAM">1140.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="PROD">Ecopower cvba</SimpleData>
+		<SimpleData name="INSTAL">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">22000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2004/04/01</SimpleData>
+		<SimpleData name="PROD_MWH">36396.820878</SimpleData>
+		<SimpleData name="id">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.762702675275939,51.147036711739936</coordinates></Point>
+  </Placemark>
+  <Placemark id="11">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">107893.16550</SimpleData>
+		<SimpleData name="Y">206327.06030</SimpleData>
+		<SimpleData name="GSCODE">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="BEDR_NR">7230W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Kluizendok</SimpleData>
+		<SimpleData name="PROJECT">Kluizendok Wind</SimpleData>
+		<SimpleData name="AANTTURB">11.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">22000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2005.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">98.000000</SimpleData>
+		<SimpleData name="TOTHOOG">135.000000</SimpleData>
+		<SimpleData name="TYPE_1">Enercon E70</SimpleData>
+		<SimpleData name="AANT_FAM">1140.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="PROD">Ecopower cvba</SimpleData>
+		<SimpleData name="INSTAL">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">22000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2004/04/01</SimpleData>
+		<SimpleData name="PROD_MWH">36396.820878</SimpleData>
+		<SimpleData name="id">11</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.76677960579459,51.165427260632761</coordinates></Point>
+  </Placemark>
+  <Placemark id="12">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">108231.29550</SimpleData>
+		<SimpleData name="Y">206498.34510</SimpleData>
+		<SimpleData name="GSCODE">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="BEDR_NR">7200W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Kluizendok</SimpleData>
+		<SimpleData name="PROJECT">Kluizendok Wind</SimpleData>
+		<SimpleData name="AANTTURB">11.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">22000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2005.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">98.000000</SimpleData>
+		<SimpleData name="TOTHOOG">135.000000</SimpleData>
+		<SimpleData name="TYPE_1">Enercon E70</SimpleData>
+		<SimpleData name="AANT_FAM">1140.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="PROD">Ecopower cvba</SimpleData>
+		<SimpleData name="INSTAL">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">22000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2004/04/01</SimpleData>
+		<SimpleData name="PROD_MWH">36396.820878</SimpleData>
+		<SimpleData name="id">12</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.77159377893329,51.166991329681728</coordinates></Point>
+  </Placemark>
+  <Placemark id="13">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">108590.57790</SimpleData>
+		<SimpleData name="Y">206588.04180</SimpleData>
+		<SimpleData name="GSCODE">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="BEDR_NR">7160W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Kluizendok</SimpleData>
+		<SimpleData name="PROJECT">Kluizendok Wind</SimpleData>
+		<SimpleData name="AANTTURB">11.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">22000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2005.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">98.000000</SimpleData>
+		<SimpleData name="TOTHOOG">135.000000</SimpleData>
+		<SimpleData name="TYPE_1">Enercon E70</SimpleData>
+		<SimpleData name="AANT_FAM">1140.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="PROD">Ecopower cvba</SimpleData>
+		<SimpleData name="INSTAL">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">22000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2004/04/01</SimpleData>
+		<SimpleData name="PROD_MWH">36396.820878</SimpleData>
+		<SimpleData name="id">13</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.776719973853122,51.167823379241831</coordinates></Point>
+  </Placemark>
+  <Placemark id="14">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">109011.85740</SimpleData>
+		<SimpleData name="Y">206673.38050</SimpleData>
+		<SimpleData name="GSCODE">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="BEDR_NR">7120W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Kluizendok</SimpleData>
+		<SimpleData name="PROJECT">Kluizendok Wind</SimpleData>
+		<SimpleData name="AANTTURB">11.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">22000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2005.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">98.000000</SimpleData>
+		<SimpleData name="TOTHOOG">135.000000</SimpleData>
+		<SimpleData name="TYPE_1">Enercon E70</SimpleData>
+		<SimpleData name="AANT_FAM">1140.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="PROD">Ecopower cvba</SimpleData>
+		<SimpleData name="INSTAL">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">22000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2004/04/01</SimpleData>
+		<SimpleData name="PROD_MWH">36396.820878</SimpleData>
+		<SimpleData name="id">14</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.782733204775251,51.168620432220912</coordinates></Point>
+  </Placemark>
+  <Placemark id="15">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">109332.96170</SimpleData>
+		<SimpleData name="Y">206839.75300</SimpleData>
+		<SimpleData name="GSCODE">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="BEDR_NR">7040W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Kluizendok</SimpleData>
+		<SimpleData name="PROJECT">Kluizendok Wind</SimpleData>
+		<SimpleData name="AANTTURB">11.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">22000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2005.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">98.000000</SimpleData>
+		<SimpleData name="TOTHOOG">135.000000</SimpleData>
+		<SimpleData name="TYPE_1">Enercon E70</SimpleData>
+		<SimpleData name="AANT_FAM">1140.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="PROD">Ecopower cvba</SimpleData>
+		<SimpleData name="INSTAL">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">22000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2004/04/01</SimpleData>
+		<SimpleData name="PROD_MWH">36396.820878</SimpleData>
+		<SimpleData name="id">15</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.787305368831056,51.17013849871023</coordinates></Point>
+  </Placemark>
+  <Placemark id="16">
+	<ExtendedData><SchemaData schemaUrl="#Windmolens2">
+		<SimpleData name="X">109649.98440</SimpleData>
+		<SimpleData name="Y">206924.40140</SimpleData>
+		<SimpleData name="GSCODE">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="BEDR_NR">7020W</SimpleData>
+		<SimpleData name="TYPE">windmolen</SimpleData>
+		<SimpleData name="POSTLOC">9000.000000</SimpleData>
+		<SimpleData name="LOCATIE">Gent-Kluizendok</SimpleData>
+		<SimpleData name="PROJECT">Kluizendok Wind</SimpleData>
+		<SimpleData name="AANTTURB">11.000000</SimpleData>
+		<SimpleData name="P_TOT_KW">22000.000000</SimpleData>
+		<SimpleData name="P_TURBKW">2000.000000</SimpleData>
+		<SimpleData name="INGEBRK">2005.000000</SimpleData>
+		<SimpleData name="ASHOOGTE">98.000000</SimpleData>
+		<SimpleData name="TOTHOOG">135.000000</SimpleData>
+		<SimpleData name="TYPE_1">Enercon E70</SimpleData>
+		<SimpleData name="AANT_FAM">1140.000000</SimpleData>
+		<SimpleData name="STATUS">operationeel</SimpleData>
+		<SimpleData name="CODEVREG">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="PROD">Ecopower cvba</SimpleData>
+		<SimpleData name="INSTAL">WND-0028 Kluizendok Wind Ecopower 1</SimpleData>
+		<SimpleData name="TECHN">windenergie op land</SimpleData>
+		<SimpleData name="P_KWE">22000.000000</SimpleData>
+		<SimpleData name="DATUM_IN">2004/04/01</SimpleData>
+		<SimpleData name="PROD_MWH">36396.820878</SimpleData>
+		<SimpleData name="id">16</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.791828540226144,51.17092154381934</coordinates></Point>
+  </Placemark>
+</Folder></Document></kml>

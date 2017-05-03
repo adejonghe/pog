@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "sf": "http://www.opengis.net/sf#",
+		"geo": "http://www.opengis.net/ont/geosparql#",
+    "enigma": "http://www.pog.be/enigma/vocab#" ,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dwt": {
+      "@id": "enigma:deadweight",
+      "@type": "xsd:int"
+    },
+    "gt_shiptype": {
+      "@id": "enigma:gt_shiptype",
+      "@type": "xsd:int"
+    },
+    "flag": "enigma:flag",
+    "heading": {
+      "@id": "enigma:heading",
+      "@type": "xsd:int"
+    },
+    "length": {
+      "@id": "enigma:length",
+      "@type": "xsd:int"
+    },
+    "destination": "http://schema.org/description",
+    "lon": {
+      "@id": "http://schema.org/longitude",
+      "@type": "xsd:float"
+    },
+    "shiptype": "enigma:shiptype",
+    "speed": {
+      "@id": "enigma:speed",
+      "@type": "xsd:float"
+    },
+    "elapsed": {
+      "@id": "enigma:elapsed",
+      "@type": "xsd:int"
+    },
+    "w_left": {
+        "@id": "enigma:wLeft",
+        "@type": "xsd:int"
+    },
+    "rot": {
+       "@id": "enigma:rateOfTurn",
+       "@type": "xsd:int"
+    },
+    "width": {
+       "@id": "enigma:width",
+       "@type": "xsd:int"
+    },
+    "l_fore": {
+        "@id": "enigma:lFore",
+        "@type": "xsd:int"
+    },
+    "course": {
+        "@id": "enigma:course",
+        "@type": "xsd:int"
+    },
+    "ship_id": {
+        "@id": "enigma:shipId",
+        "@type": "xsd:int"
+    },
+    "shipname": "enigma:shipName",
+    "lat": {
+      "@id": "http://schema.org/latitude",
+      "@type": "xsd:float"
+    },
+    "timestamp": {
+      "@id": "enigma:timestamp",
+      "@type": "xsd:long"
+    },
+    "key": "enigma:key",
+    "ts": {
+      "@id": "enigma:ts",
+      "@type": "xsd:dateTime"
+    },
+    "geometry": "enigma:geometry"
+  }
+}

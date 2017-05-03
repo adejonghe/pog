@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>CAPRADS DEMO - Port of Ghent</title>
+	
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />	
+
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/togeojson@0.14.2"></script>	
+	<script src="https://unpkg.com/jquery@3.1.1"></script>
+	<script src="https://unpkg.com/jsonld@0.4.11"></script>	
+	<script src="https://unpkg.com/wicket@1.3.2"></script>	
+
+	<style type="text/css">
+		html {
+			height: 100%;
+		}
+		body {
+			height: 100%;
+			margin: 0px 0px 0px 0px;
+		}
+		.wrapper {
+		    width: 100%;
+		    height: 100%;
+		    /*border: 1px solid black;*/
+		    overflow: hidden; /* will contain if #first is longer than #second */
+		}
+		.left {
+		    width: 50%;
+		    height: 100%;
+		    float: left; /* add this */
+		    /*order: 1px solid red;*/
+		}
+		.right {
+			width: 50%;
+		    /*border: 1px solid green;*/
+		    /*overflow: hidden; /* if you don't want #second to wrap below #first */
+		    float: left; /* add this */
+		}
+		.loadData {
+			background-color: springgreen;
+		}
+		.registerStream {
+			background-color: lightSalmon;
+		}
+		.registerQuery {
+			background-color: skyblue;
+		}
+		.postInKB {
+			background-color: lightyellow;
+		}
+
+		.console {
+			background-color: pink;
+		}
+		.hover {
+			background-color: plum;
+		}
+		.divBorder {
+			border: 2px solid black;
+			padding: 5px 5px 5px 5px;
+			margin: 5px 5px 5px 5px;
+		}
+		.map {
+			height: calc(100% - 140px);
+			display: block;
+		}
+		.divTable {
+			width: 100%;
+			display: table;
+		}
+		.divTableRow {
+			display: table-row;
+		}
+		.divTableCell {
+			display: table-cell;
+		}
+		textarea {
+			resize: none;
+			width: calc(100% - 10px);
+		}
+	</style>
+
+</head>
+<body>
+
+<!--
+<p><b>CAPRADS DEMO - Port of Ghent</b></p>
+-->
+
+<div class=wrapper>
+
+	<div class=left>
+		<div id="mapid" class="map divBorder"></div>
+		<div class="hover divBorder">
+			<b>Hover text</b><br>
+			<textarea id="properties" rows="4" readonly="true"></textarea>
+		</div>
+	</div>
+
+	<div class=right>
+
+		<div class="divBorder">
+			<b>RSP Service:</b><textarea rows="1" id="rspservice">http://localhost:8175/</textarea>
+		</div>
+
+		<div id="files" class="loadData divBorder">
+			<b>Load Static Data</b><br>
+			<div style="overflow: hidden">
+				<div style="width: 50%; float: left">
+					<div style="overflow: hidden">
+						<div style="width: 50%; float: left">
+							<!--<input type="checkbox" name="docks" value='{"url": "https://datatank.stad.gent/4/infrastructuur/dokken.kml", "featureType": "Dock", "color": "lightblue", "zindex":0 }'>Docks<br>-->
+							<input type="checkbox" name="docks" value='{"url": "http://localhost:8080/pog-demo/static/dokken.kml", "featureType": "Dock", "color": "lightblue", "zindex":0 }'>Docks<br>
+						</div>
+						<div style="width: 50%; float: right">
+							<!--<input type="checkbox" name="sites" value='{"url": "https://datatank.stad.gent/4/grondgebied/bedrijfsgebouwenhavengent.kml", "featureType": "CompanySite", "color": "green", "zindex":0 }'>Company Sites<br>-->
+							<input type="checkbox" name="sites" value='{"url": "http://localhost:8080/pog-demo/static/bedrijfspercelenhavengent.kml", "featureType": "CompanySite", "color": "green", "zindex":0 }'>Company Sites<br>
+						</div>
+					</div>
+				</div>
+				<div style="width: 50%; float: right">
+					<div style="overflow: hidden">
+						<div style="width: 50%; float: left">
+							<!--<input type="checkbox" name="turbines" value='{"url": "https://datatank.stad.gent/4/infrastructuur/windturbineshavengent.kml", "featureType": "Windmill", "color": "yellow", "zindex":1 }'>Windmill Turbines<br>-->
+							<input type="checkbox" name="turbines" value='{"url": "http://localhost:8080/pog-demo/static/windturbineshavengent.kml", "featureType": "Windmill", "color": "yellow", "zindex":1 }'>Windmill Turbines<br>
+						</div>
+						<div style="width: 50%; float: right">
+							<!--<input type="checkbox" name="quays" value='{"url": "https://datatank.stad.gent/4/infrastructuur/kaainummershavengent.kml", "featureType": "Quay", "color": "red", "zindex":1 }'>Quays<br>-->
+							<input type="checkbox" name="quays" value='{"url": "http://localhost:8080/pog-demo/static/kaainummershavengent.kml", "featureType": "Quay", "color": "red", "zindex":1 }'>Quays<br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type="button" value="Load Static Data" onclick="handleFileSelection()">
+		</div>
+
+		<div class="registerStream divBorder">
+			<b>Register Stream</b><br>
+			<div style="overflow: hidden">
+				<div style="width: 50%; float: left">
+					<textarea rows="1" id="stream">http://localhost:8114/caprads/sgraph</textarea>
+				</div>
+				<div style="width: 50%; float: right">
+					<input type="button" value="Register Stream" onclick="registerStream()">
+				</div>
+			</div>
+		</div>
+
+		<div class="registerQuery divBorder">
+			<b>Register Query</b><br>
+			<div>
+				<div style="overflow: hidden">
+					<div style="width: 50%; float: left">
+						Query Name:<input type="text" rows="1" cols="100" id="queryName" value="" oninput="resetDropDown()"/>
+					</div>
+					<div style="width: 50%; float: right">
+						Predefined queries:
+						<select id="predefinedQueries" onchange="loadPredefinedQuery(this.value)">
+							<option value="">--Please select--</option>
+							<option value="allShips">All Ships</option>
+							<!--<option value="test">Test Query</option>-->
+							<option value="specificShips">Specific type of ships</option>
+							<option value="shipsInSifferdok">Ships in Sifferdok</option>
+							<!--<option value="companiesAtSifferdok">Companies adjacent to Sifferdok</option>-->
+							<option value="shipsToEvacuate">Evacuate ships</option>
+							<option value="companiesWithIncident">Wind Turbine with incident</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					Query Body:<textarea rows="28" id="queryBody"></textarea>
+				</div>
+			</div>
+			<input type="button" value="Register Query" onclick="registerQuery()">
+			<input type="button" value="Deregister Query" onclick="deregisterQuery()">
+		</div>
+
+		<div class="postInKB divBorder">
+			<b>Post incidents</b><br>
+			<div style="overflow: hidden">
+				<div style="width: 50%; float: left">
+					<select id="incidents">
+						<option value="">--Please select--</option>
+						<option value="http://localhost:8080/pog-demo/static/incidents_cs.rdf">On company site</option>
+						<option value="http://localhost:8080/pog-demo/static/incidents_wt.rdf">On wind turbine</option>
+					</select>
+					<input type="button" value="Post in KB" onclick="postInKB()">
+				</div>
+			</div>
+			<!--
+			<div>
+				<textarea rows="3" id="serialization"></textarea>
+			</div>
+			-->
+		</div>
+
+		<div class="console divBorder">
+			<b>Console</b><br>
+			<textarea id="console" rows="7" readonly="true"></textarea>
+			<input type="button" value="Clear Console" onclick="clearConsole()">
+		</div>
+
+		
+		<!--
+		<input type="button" value="Test" onclick="removeLayer('test')">
+		-->
+
+	</div>
+</div>
+
+<script>
+
+	var map = L.map('mapid').setView([51.13, 3.77], 11);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(map);
+
+	var overlays = {
+			"static" : L.layerGroup(),
+			"allShips" : L.layerGroup(),
+			"specificShips" : L.layerGroup(),
+			"shipsInSifferdok" : L.layerGroup(),
+			"shipsToEvacuate" : L.layerGroup(),
+			"companiesWithIncident" : L.layerGroup()
+	};
+
+	L.control.layers(null, overlays).addTo(map);
+
+	var staticLayers = [];
+
+	var shipIconRed = new L.Icon({
+	    iconSize: [27, 27],
+	    iconAnchor: [13, 27],
+	    popupAnchor:  [1, -24],
+	    iconUrl: 'ship_location_red.png'
+	});
+
+	var shipIconBlack = new L.Icon({
+	    iconSize: [27, 27],
+	    iconAnchor: [13, 27],
+	    popupAnchor:  [1, -24],
+	    iconUrl: 'ship_location_black.png'
+	});
+
+	var shipIconBlue = new L.Icon({
+	    iconSize: [27, 27],
+	    iconAnchor: [13, 27],
+	    popupAnchor:  [1, -24],
+	    iconUrl: 'ship_location_blue.png'
+	});
+
+	var shipIconYellow = new L.Icon({
+	    iconSize: [27, 27],
+	    iconAnchor: [13, 27],
+	    popupAnchor:  [1, -24],
+	    iconUrl: 'ship_location_yellow.png'
+	});
+
+	var shipIconPink = new L.Icon({
+	    iconSize: [27, 27],
+	    iconAnchor: [13, 27],
+	    popupAnchor:  [1, -24],
+	    iconUrl: 'ship_location_pink.png'
+	});
+
+	var shipIconGreen = new L.Icon({
+	    iconSize: [27, 27],
+	    iconAnchor: [13, 27],
+	    popupAnchor:  [1, -24],
+	    iconUrl: 'ship_location_green.png'
+	});
+
+	var iconMap = { "allShips": shipIconRed, 
+				    "specificShips": shipIconBlack,
+				    "shipsInSifferdok": shipIconBlue,
+					"companiesAtSifferdok": shipIconYellow,
+					"shipsToEvacuate": shipIconPink,
+					"companiesWithIncident": shipIconGreen
+					}
+
+
+	function resetDropDown() {
+		$('#predefinedQueries').val("");
+	}
+
+	function loadPredefinedQuery(queryName) {
+		$('#queryName').val(queryName);
+
+		if (queryName == "") {
+			$('#queryBody').val("");
+		} else {
+			$.ajax({
+				url : "queries/" + queryName + ".txt",
+				dataType: "text",
+			})
+			.done(function (data) {
+				$('#queryBody').val(data);
+			})
+	  		.fail(function(jqXHR, textStatus, errorThrown) {
+	  			log("could not load " + url);
+	  		});
+		}
+	}
+
+	function handleFileSelection() {
+
+		$.each(staticLayers, function(index, element) {
+			map.removeLayer(element.value);
+			deleteData(element.key);
+		});
+
+		staticLayers = [];
+
+		var values = [];
+        $('#files input:checked').each(function() {
+            values.push(this.value);
+        });
+
+		for (var i = 0, v; v = values[i]; i++) {
+
+			(function(json) {
+
+				$.ajax(json.url).done(function(xml) {
+					var data = toGeoJSON.kml(xml);
+
+				    var geojson = L.geoJson(data, {
+				    	style: style(this, json.color),
+						onEachFeature: 	function (feature, layer) {
+							layer.on({
+								mouseover: highlightFeature,
+								mouseout: function(e) {
+									geojson.resetStyle(e.target); 
+									update();
+								}
+							});
+							if (feature.properties && feature.properties.name) {
+						        layer.bindPopup(feature.properties.name);
+						    }
+						},
+						pointToLayer: function (feature, latlng) {
+							var geojsonMarkerOptions = {
+							    radius: 8,
+							    fillColor: "#ff7800",
+							    color: "#000",
+							    weight: 1,
+							    opacity: 1,
+							    fillOpacity: 0.8
+							};
+							return L.circleMarker(latlng, geojsonMarkerOptions);
+						}
+					});
+
+					staticLayers.push({
+						key: json.url, 
+						value: geojson
+					});
+
+					overlays['static'].addLayer(geojson);
+
+					postData(json.url, json.featureType);		    
+				});
+
+			})(JSON.parse(v));
+		}
+  	}      
+
+  	function postData(url, type) {
+  		var action = "putKML";
+  		var fileKML = url;
+  		var fileXSLT = "http://localhost:8080/pog-demo/KML2RDF.xsl";
+  		var featureType = type;
+  		var postURL = "http://localhost:8175/kb";
+  		var payload = 'action='+action+'&fileKML='+fileKML+'&fileXSLT='+fileXSLT+"&featureType="+featureType;
+  		var message = "Loading static knowledge from " + url + " ...";
+
+  		log(message);
+
+  		$.post(postURL, payload)
+  		.done(function(data, textStatus, jqXHR) {
+  			log(message + " " + textStatus);
+  			log(data);
+  		})
+  		.fail(function(jqXHR, textStatus, errorThrown) {
+  			log(message + " " + textStatus);
+  			log(jqXHR.responseText);
+  		});
+  	}
+
+  	function deleteData(url) {
+  		var action = "delete";
+  		var postURL = "http://localhost:8175/kb";
+  		var payload = 'action='+action+'&iri='+postURL;
+  		var message = "Deleting static knowledge from " + url + " ... ";
+
+  		log(message);
+
+  		$.post(postURL, payload)
+ 		.done(function(data, textStatus, jqXHR) {
+  			log(message + " " + textStatus);
+  			log(data);
+  		})
+  		.fail(function(jqXHR, textStatus, errorThrown) {
+  			log(message + " " + textStatus);
+  			log(jqXHR.responseText);
+  		});
+  	}
+
+  	function registerStream() {
+  		var putURL = "http://localhost:8175/streams";
+  		var streamIri = document.getElementById("stream").value;
+  		var payload = 'streamIri='+streamIri;
+  		var message = "Register stream " + streamIri + " ... "; 
+
+  		log(message);
+
+  		$.ajax(putURL, { method: "PUT", data: payload })
+  		.done(function(data, textStatus, jqXHR) {
+  			log(message + " " + textStatus);
+  			log(data);
+  		})
+  		.fail(function(jqXHR, textStatus, errorThrown) {
+  			log(message + " " + textStatus);
+  			log(jqXHR.responseText);
+  		});
+  	}
+
+  	function registerQuery() {
+  		var queryName = $('#queryName').val();
+  		var putURL = "http://localhost:8175/queries/"+queryName;
+  		var payload = "REGISTER STREAM " + queryName + " AS \n";
+  		payload += $("#queryBody").val().replace(/\t/g, '  ');
+  		var message = "Register query " + putURL + " ... ";
+
+  		log(message);
+
+  		$.ajax(putURL, { method: "PUT", data: payload })
+  		.done(function(data, textStatus, jqXHR) {
+  			log(message + " " + textStatus);
+  			log(data);
+  			getResultFromQueryWS(queryName);
+  		})
+  		.fail(function(jqXHR, textStatus, errorThrown) {
+  			log(message + " " + textStatus);
+  			log(jqXHR.responseText);
+  		});
+  	}
+
+  	function deregisterQuery() {
+  		var queryName = $('#queryName').val();
+  		var deleteURL = "http://localhost:8175/queries/"+queryName;
+  		var message = "Deregister query " + deleteURL + " ... ";
+
+  		log(message);
+
+  		$.ajax(deleteURL, { method: "DELETE" })
+  		.done(function(data, textStatus, jqXHR) {
+  			removeLayer(queryName);
+  			log(message + " " + textStatus);
+  			log(data);
+  		})
+  		.fail(function(jqXHR, textStatus, errorThrown) {
+  			log(message + " " + textStatus);
+  			log(jqXHR.responseText);
+  		});
+  	}
+
+  	  function postInKB() {
+  		var action = "put";
+  		var iri = $('#incidents').val();
+  		var postURL = "http://localhost:8175/kb";
+  		var payload = 'action='+action+'&iri='+iri+'&serialization=""';
+  		var message = "Post context " + iri + " ...";
+
+  		log(message);
+
+  		$.post(postURL, payload)
+  		.done(function(data, textStatus, jqXHR) {
+  			log(message + " " + textStatus);
+  			log(data);
+  		})
+  		.fail(function(jqXHR, textStatus, errorThrown) {
+  			log(message + " " + textStatus);
+  			log(jqXHR.responseText);
+  		});
+  	}
+
+  	function clearConsole() {
+  		$('#console').val("");
+  	}
+
+  	function getResultFromQueryWS(queryName) {
+        if ("WebSocket" in window) {
+           
+           	// Let us open a web socket
+           	var ws = new WebSocket("ws://localhost:8176/results/"+queryName);
+			
+           	ws.onopen = function() {
+           		log("Waiting for results from query " + queryName);
+           	};
+			
+         	ws.onmessage = function (evt) { 
+         		log("Receiving results for query " + queryName + ": " + evt.data);
+
+         		// delete current query results
+         		removeLayer(queryName);
+
+         		// create new layers and display results
+         		createLayers(JSON.parse(evt.data), queryName);            	
+            }
+			
+         	ws.onclose = function() { 
+  				log("WS closed");
+          	};
+        }
+        
+        else {
+	    	// The browser doesn't support WebSocket
+	    	log("WebSocket NOT supported by your Browser!");
+        }
+    }
+
+    function removeLayer(queryName) {
+    	overlays[queryName].clearLayers();
+
+    	/*
+        var layerGroup = queryResultLayers[queryName];
+ 		if (layerGroup) {
+ 			map.removeLayer(layerGroup);
+ 			delete queryResultLayers[queryName];
+ 		}*/
+    }
+
+    function createLayers(data,queryName) {
+
+    	// Get type from data to make it more dynamic
+    	var frame = {
+			"@type": "http://www.opengis.net/ont/geosparql#Feature"
+		};
+
+    	jsonld.frame(data, frame, function(err, framed) {
+			jsonld.compact(framed, "http://localhost:8080/pog-demo/context.json", function(err, compacted) {
+
+
+				var layerGroup = overlays[queryName];
+				layerGroup.clearLayers();
+
+				if (compacted['@graph']) {
+
+					var graphs = compacted['@graph'];
+					graphs.forEach(function(graph) {
+						createLayerForFeature(graph, layerGroup, queryName);
+					});
+
+				} else {
+					createLayerForFeature(compacted, layerGroup, queryName);
+				}
+
+			});
+		});
+    } 
+
+    function createLayerForFeature(data, layerGroup, queryName) {
+
+    	if (data.geometry) {
+
+			var wktLiteral = data.geometry.asWKT["@value"];
+
+	        var wkt = new Wkt.Wkt();
+	        wkt.read(wktLiteral);
+	        data.geometry = wkt.toJson();
+
+	    	var newLayer = L.geoJson(data, {
+				onEachFeature: 	function (feature, layer) {
+					layer.on({
+						mouseover: function (e) {
+							var props = e.target.feature.properties;
+							document.getElementById("properties").value = (props ? JSON.stringify(props) : 'Hover over a component');
+						},
+						mouseout: function(e) {
+							update();
+						}
+					});
+					if (feature.properties) {
+				        layer.bindPopup(feature.properties.shipname);
+				    }
+				},
+				pointToLayer: function(feature, latlng) {
+	        		return L.marker(latlng, {icon: iconMap[queryName]});
+	    		}
+			});
+
+			layerGroup.addLayer(newLayer);
+
+		} else {
+			log("ERROR: No geometry found");
+		}
+    }
+
+  	function log(message) {
+  		$("#console").val(message + "\n" + $("#console").val());
+  	}
+
+  	function style(feature, c) {
+	    return {
+	        fillColor: c,
+	        fillOpacity: 0.7,
+	        weight: 1,
+	        opacity: 1,
+	        color: 'white',
+	        dashArray: '3'
+	    };
+	}
+
+	function update(props) {
+		document.getElementById("properties").value = (props ? JSON.stringify(props) : 'Hover over a component');
+	}
+	
+	function highlightFeature(e) {
+		var layer = e.target;
+
+		layer.setStyle({
+			weight: 2,
+			color: 'red',
+			dashArray: '',
+			fillOpacity: 0.7
+		});
+
+		update(layer.feature.properties);
+	}
+
+</script>
+
+</body>
+</html>
