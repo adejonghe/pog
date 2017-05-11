@@ -1,0 +1,18 @@
+version: '3'
+services:
+  triplewave:
+    image: caprads/triplewave
+    ports:
+      - "8114:8114"
+      - "8124:8124"
+      - "3030:3030"
+  rspservice:
+    image: caprads/rsp-services-csparql
+    ports:
+      - "8175:8175"
+      - "8176:8176"
+  web:
+    build: .
+    image: caprads/web
+    ports:
+      - "8080:8080"

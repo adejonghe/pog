@@ -11,8 +11,8 @@ CONSTRUCT {
 	?f caprads:properties ?p .
 	?p ?pred ?prop .
 } 
-FROM STREAM <hhttp://localhost:8114/caprads/sgraph> [RANGE 180s STEP 3s] 
-FROM <http://localhost:8080/pog-demo/static/dokken.rdf> 
+FROM STREAM <http://triplewave:8114/caprads/sgraph> [RANGE 180s STEP 3s] 
+FROM <http://web:8080/pog-demo/static/dokken.rdf> 
 WHERE {  
 	?f rdf:type caprads:Ship . 
 	?f rdf:type ?t .

@@ -12,9 +12,9 @@ CONSTRUCT {
 	?s caprads:properties ?p .
 	?p ?pred ?prop .
 } 
-FROM STREAM <http://localhost:8114/caprads/sgraph> [RANGE 180s STEP 3s] 
-FROM <http://localhost:8080/pog-demo/static/incidents_wt.rdf>
-FROM <http://localhost:8080/pog-demo/static/windturbineshavengent.rdf>
+FROM STREAM <http://triplewave:8114/caprads/sgraph> [RANGE 180s STEP 3s] 
+FROM <http://web:8080/pog-demo/static/incidents_wt.rdf>
+FROM <http://web:8080/pog-demo/static/windturbineshavengent.rdf>
 WHERE {  
 	?s rdf:type caprads:Ship .
 	?s rdf:type ?t .

@@ -102,8 +102,14 @@
 
 	<div class=right>
 
-		<div class="divBorder">
-			<b>RSP Service:</b><textarea rows="1" id="rspservice">http://localhost:8175/</textarea>
+		<div id="repoSection" class="divBorder">
+			<b>Repo Selection</b><br>
+			<div style="overflow: hidden">
+				<form>
+				  <input type="radio" name="repo" value="local" checked> Local
+				  <input type="radio" name="repo" value="remote"> Remote
+				</form> 
+			</div>
 		</div>
 
 		<div id="files" class="loadData divBorder">
@@ -112,24 +118,20 @@
 				<div style="width: 50%; float: left">
 					<div style="overflow: hidden">
 						<div style="width: 50%; float: left">
-							<!--<input type="checkbox" name="docks" value='{"url": "https://datatank.stad.gent/4/infrastructuur/dokken.kml", "featureType": "Dock", "color": "lightblue", "zindex":0 }'>Docks<br>-->
-							<input type="checkbox" name="docks" value='{"url": "http://localhost:8080/pog-demo/static/dokken.kml", "featureType": "Dock", "color": "lightblue", "zindex":0 }'>Docks<br>
+							<input type="checkbox" name="docks" value='{"file": "dokken.kml", "featureType": "Dock", "color": "lightblue", "zindex":0 }'>Docks<br>
 						</div>
 						<div style="width: 50%; float: right">
-							<!--<input type="checkbox" name="sites" value='{"url": "https://datatank.stad.gent/4/grondgebied/bedrijfsgebouwenhavengent.kml", "featureType": "CompanySite", "color": "green", "zindex":0 }'>Company Sites<br>-->
-							<input type="checkbox" name="sites" value='{"url": "http://localhost:8080/pog-demo/static/bedrijfspercelenhavengent.kml", "featureType": "CompanySite", "color": "green", "zindex":0 }'>Company Sites<br>
+							<input type="checkbox" name="sites" value='{"file": "bedrijfspercelenhavengent.kml", "featureType": "CompanySite", "color": "green", "zindex":0 }'>Company Sites<br>
 						</div>
 					</div>
 				</div>
 				<div style="width: 50%; float: right">
 					<div style="overflow: hidden">
 						<div style="width: 50%; float: left">
-							<!--<input type="checkbox" name="turbines" value='{"url": "https://datatank.stad.gent/4/infrastructuur/windturbineshavengent.kml", "featureType": "Windmill", "color": "yellow", "zindex":1 }'>Windmill Turbines<br>-->
-							<input type="checkbox" name="turbines" value='{"url": "http://localhost:8080/pog-demo/static/windturbineshavengent.kml", "featureType": "Windmill", "color": "yellow", "zindex":1 }'>Windmill Turbines<br>
+							<input type="checkbox" name="turbines" value='{"file": "windturbineshavengent.kml", "featureType": "Windmill", "color": "yellow", "zindex":1 }'>Windmill Turbines<br>
 						</div>
 						<div style="width: 50%; float: right">
-							<!--<input type="checkbox" name="quays" value='{"url": "https://datatank.stad.gent/4/infrastructuur/kaainummershavengent.kml", "featureType": "Quay", "color": "red", "zindex":1 }'>Quays<br>-->
-							<input type="checkbox" name="quays" value='{"url": "http://localhost:8080/pog-demo/static/kaainummershavengent.kml", "featureType": "Quay", "color": "red", "zindex":1 }'>Quays<br>
+							<input type="checkbox" name="quays" value='{"file": "kaainummershavengent.kml", "featureType": "Quay", "color": "red", "zindex":1 }'>Quays<br>
 						</div>
 					</div>
 				</div>
@@ -141,7 +143,7 @@
 			<b>Register Stream</b><br>
 			<div style="overflow: hidden">
 				<div style="width: 50%; float: left">
-					<textarea rows="1" id="stream">http://localhost:8114/caprads/sgraph</textarea>
+					<textarea rows="1" id="stream">http://triplewave:8114/caprads/sgraph</textarea>
 				</div>
 				<div style="width: 50%; float: right">
 					<input type="button" value="Register Stream" onclick="registerStream()">
@@ -184,8 +186,8 @@
 				<div style="width: 50%; float: left">
 					<select id="incidents">
 						<option value="">--Please select--</option>
-						<option value="http://localhost:8080/pog-demo/static/incidents_cs.rdf">On company site</option>
-						<option value="http://localhost:8080/pog-demo/static/incidents_wt.rdf">On wind turbine</option>
+						<option value="http://web:8080/pog-demo/static/incidents_cs.rdf">On company site</option>
+						<option value="http://web:8080/pog-demo/static/incidents_wt.rdf">On wind turbine</option>
 					</select>
 					<input type="button" value="Post in KB" onclick="postInKB()">
 				</div>
@@ -231,6 +233,10 @@
 			"shipsToEvacuate" : L.layerGroup(),
 			"companiesWithIncident" : L.layerGroup()
 	};
+
+	var local_repo = "http://localhost:8080/pog-demo/static/";
+	var remote_repo = "https://datatank.stad.gent/4/infrastructuur/";
+	var repo = "";
 
 	L.control.layers(null, overlays).addTo(map);
 
@@ -312,6 +318,12 @@
 
 	function handleFileSelection() {
 
+		if ($('input[name=repo]:checked').val() == 'local') {
+			repo = local_repo;
+		} else {
+			repo = remote_repo;
+		}
+
 		$.each(staticLayers, function(index, element) {
 			map.removeLayer(element.value);
 			deleteData(element.key);
@@ -328,7 +340,9 @@
 
 			(function(json) {
 
-				$.ajax(json.url).done(function(xml) {
+				var url = repo + json.file;
+
+				$.ajax(url).done(function(xml) {
 					var data = toGeoJSON.kml(xml);
 
 				    var geojson = L.geoJson(data, {
@@ -359,13 +373,13 @@
 					});
 
 					staticLayers.push({
-						key: json.url, 
+						key: url, 
 						value: geojson
 					});
 
 					overlays['static'].addLayer(geojson);
 
-					postData(json.url, json.featureType);		    
+					postData(url, json.featureType);		    
 				});
 
 			})(JSON.parse(v));
@@ -380,6 +394,13 @@
   		var postURL = "http://localhost:8175/kb";
   		var payload = 'action='+action+'&fileKML='+fileKML+'&fileXSLT='+fileXSLT+"&featureType="+featureType;
   		var message = "Loading static knowledge from " + url + " ...";
+
+  		//HACK to make this work in docker containers
+  		//Replacing 'localhost' by 'web'
+  		//TODO fix this!
+  		payload = payload.replace(/localhost/g, 'web');
+
+  		log(payload);
 
   		log(message);
 
@@ -397,8 +418,15 @@
   	function deleteData(url) {
   		var action = "delete";
   		var postURL = "http://localhost:8175/kb";
-  		var payload = 'action='+action+'&iri='+postURL;
+  		var payload = 'action='+action+'&iri='+url;
   		var message = "Deleting static knowledge from " + url + " ... ";
+
+  		//HACK to make this work in docker containers
+  		//Replacing 'localhost' by 'web'
+  		//TODO fix this!
+  		payload = payload.replace(/localhost/g, 'web');
+
+  		log(payload);
 
   		log(message);
 
