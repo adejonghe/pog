@@ -1,4 +1,3 @@
 FROM tomcat
 
-COPY . /usr/local/tomcat/webapps/pog-demo/
-
+COPY src /usr/local/tomcat/webapps/pog-demo
