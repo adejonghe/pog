@@ -12,8 +12,8 @@ CONSTRUCT {
 FROM STREAM <http://triplewave:8114/caprads/sgraph> [RANGE 1s STEP 1s] 
 FROM <http://web:8080/pog-demo/static/incidents_cs.rdf>
 FROM <http://web:8080/pog-demo/static/incidents_wt.rdf>
-FROM <http://web:8080/pog-demo/static/bedrijfspercelenhavengent.rdf>
-FROM <http://web:8080/pog-demo/static/windturbineshavengent.rdf>
+FROM <http://web:8080/pog-demo/static/bedrijfspercelenhavengent.kml>
+FROM <http://web:8080/pog-demo/static/windturbineshavengent.kml>
 WHERE {  
 	?f rdf:type geo:Feature .
 	?f caprads:impactedBy ?incident .

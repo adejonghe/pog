@@ -11,7 +11,10 @@
 	<script src="https://unpkg.com/togeojson@0.14.2"></script>	
 	<script src="https://unpkg.com/jquery@3.1.1"></script>
 	<script src="https://unpkg.com/jsonld@0.4.11"></script>	
+	<!--
 	<script src="https://unpkg.com/wicket@1.3.2"></script>	
+	-->
+	<script src="wicket.js"></script>
 
 	<style type="text/css">
 		html {
@@ -400,8 +403,6 @@
   		//TODO fix this!
   		payload = payload.replace(/localhost/g, 'web');
 
-  		log(payload);
-
   		log(message);
 
   		$.post(postURL, payload)
@@ -425,8 +426,6 @@
   		//Replacing 'localhost' by 'web'
   		//TODO fix this!
   		payload = payload.replace(/localhost/g, 'web');
-
-  		log(payload);
 
   		log(message);
 
@@ -567,7 +566,7 @@
     }
 
     function createLayers(data,queryName) {
-
+    	
     	// Get type from data to make it more dynamic
     	var frame = {
 			"@type": "http://www.opengis.net/ont/geosparql#Feature"
@@ -575,7 +574,6 @@
 
     	jsonld.frame(data, frame, function(err, framed) {
 			jsonld.compact(framed, "http://localhost:8080/pog-demo/context.json", function(err, compacted) {
-
 
 				var layerGroup = overlays[queryName];
 				layerGroup.clearLayers();
