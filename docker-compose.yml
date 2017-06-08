@@ -11,6 +11,8 @@ services:
     ports:
       - "8175:8175"
       - "8176:8176"
+    volumes:
+      - ./CSPARQL-engine/csparql-sparql-parliament/lib/:/parliament
   web:
     build: .
     image: caprads/web

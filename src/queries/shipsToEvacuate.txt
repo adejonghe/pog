@@ -12,7 +12,7 @@ CONSTRUCT {
 	?s caprads:properties ?p .
 	?p ?pred ?prop .
 } 
-FROM STREAM <http://triplewave:8114/caprads/sgraph> [RANGE 180s STEP 3s] 
+FROM STREAM <http://triplewave:8114/caprads/sgraph> [RANGE 60s STEP 3s] 
 FROM <http://web:8080/pog-demo/static/incidents_wt.rdf>
 FROM <http://web:8080/pog-demo/static/windturbineshavengent.kml>
 WHERE {  

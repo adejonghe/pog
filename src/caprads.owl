@@ -532,7 +532,7 @@
 
     <owl:NamedIndividual rdf:about="http://idlab.ugent.be/caprads/brokenwindmill">
         <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#BrokenWindmill"/>
-        <evacuationRadius rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50000.0</evacuationRadius>
+        <evacuationRadius rdf:datatype="http://www.w3.org/2001/XMLSchema#double">500.0</evacuationRadius>
         <radiusUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.opengis.net/def/uom/OGC/1.0/metre</radiusUnit>
     </owl:NamedIndividual>
 </rdf:RDF>

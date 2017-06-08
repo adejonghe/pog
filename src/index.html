@@ -171,7 +171,7 @@
 							<option value="shipsInSifferdok">Ships in Sifferdok</option>
 							<!--<option value="companiesAtSifferdok">Companies adjacent to Sifferdok</option>-->
 							<option value="shipsToEvacuate">Evacuate ships</option>
-							<option value="companiesWithIncident">Wind Turbine with incident</option>
+							<option value="featureWithIncident">Feature with incident</option>
 						</select>
 					</div>
 				</div>
@@ -234,7 +234,7 @@
 			"specificShips" : L.layerGroup(),
 			"shipsInSifferdok" : L.layerGroup(),
 			"shipsToEvacuate" : L.layerGroup(),
-			"companiesWithIncident" : L.layerGroup()
+			"featureWithIncident" : L.layerGroup()
 	};
 
 	var local_repo = "http://localhost:8080/pog-demo/static/";
@@ -290,9 +290,8 @@
 	var iconMap = { "allShips": shipIconRed, 
 				    "specificShips": shipIconBlack,
 				    "shipsInSifferdok": shipIconBlue,
-					"companiesAtSifferdok": shipIconYellow,
 					"shipsToEvacuate": shipIconPink,
-					"companiesWithIncident": shipIconGreen
+					"featureWithIncident": shipIconGreen
 					}
 
 
